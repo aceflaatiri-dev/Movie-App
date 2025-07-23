@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+header {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #1f1f1f;
+}
+
+#app-title {
+  font-size: 2.5rem;
+  color: #f44336;
+  text-shadow: 0 0 10px #f44336;
+}
+
+#search-input {
+  width: 60%;
+  max-width: 400px;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: #2c2c2c;
+  color: white;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+#movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.movie-card {
+  background-color: #1f1f1f;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  animation: fadeIn 0.6s forwards;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.movie-poster {
+  width: 100%;
+  display: block;
+}
+
+.movie-info {
+  padding: 1rem;
+  text-align: center;
+}
+
+.movie-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.movie-rating {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.loader {
+  border: 8px solid #333;
+  border-top: 8px solid #f44336;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #aaa;
+  font-size: 0.8rem;
+  background-color: #1f1f1f;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 600px) {
+  #search-input {
+    width: 80%;
+  }
+
+  .movie-card {
+    margin: 0 auto;
+  }
+}
